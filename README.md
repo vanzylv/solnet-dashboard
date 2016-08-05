@@ -1,4 +1,4 @@
-# Solnet dashboard assestment exersise
+# Solnet dashboard assessment exercise
 
 ### Local Building
 Building locally requires 
