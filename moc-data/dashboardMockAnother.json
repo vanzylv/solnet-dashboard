@@ -1,0 +1,109 @@
+{
+
+  "portfolioManager" : {
+    "name":"Gerard"
+  },
+
+  "clientBilling" : {
+    "workingHours" : 90,
+    "clients" : [
+      ["Sweet & Simple LTD","37:44 h"],
+      ["Nike running shoes","40:34 h"],
+      ["Vodacom","11:01 h"],
+      ["Edgars","11:50 h"]
+    ],
+    "clientManager" : {
+      "name" : "Jake Finn",
+      "location" : "Auckland, NZ",
+      "workHours" : "14 Hours",
+      "amountTotal" : "$ 6,269",
+      "overdue": "$ 829",
+      "percOverallWork" : "52%"
+    },
+    "weeklyOverdue" : [28, 48, 40, 19, 86, 27, 90]
+
+  },
+
+  "people" : {
+    "data" : [
+      "John","Peter","Chris","Malcolm","Gerhard","Vickus"
+    ]
+  }
+  ,
+
+  "workingHours" : {
+    "monthTimeSeries": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July"
+    ],
+    "hoursTimeSeries": [
+      "Planned",
+      "Actual"
+    ],
+
+
+    "hours" : [
+      [10, 12, 80, 66, 30, 12, 10],
+      [40, 15, 40, 88, 86, 27, 50]
+    ]
+  },
+
+  "workingHoursDataBreakdown" : {
+    "totalHours" : 96,
+    "hours" : [
+      [1,1,1,1,0],
+      [1,1,1,1,0],
+      [1,1,1,1,0]
+    ]
+  },
+
+  "conversations" : {
+    "total" : 1.204,
+    "conversation" : [
+      [1,120,20,100,0,1,120,20,100,0,1,120,20,100,0,1,120,20,100,0,1,120,20,100,0]
+    ]
+  },
+
+  "projects" : [
+    {
+      "title" : "Project title 1",
+      "descriptionType" : "Design and development",
+      "lastUpdated" : "Today at 4:24 AM",
+      "timeSpent" : "26:30",
+      "count" : 46,
+      "progress" : "20%"
+    },
+    {
+      "title" : "Project title 2",
+      "descriptionType" : "Design and development",
+      "lastUpdated" : "Today at 4:24 AM",
+      "timeSpent" : "10:30",
+      "count" : 30,
+      "progress" : "80%"
+    },
+    {
+      "title" : "Project title 3",
+      "descriptionType" : "Design and development",
+      "lastUpdated" : "Today at 3:10 AM",
+      "timeSpent" : "26:30",
+      "count" : 46,
+      "progress" : "67%"
+    }
+    ,{
+      "title" : "Project title 4",
+      "descriptionType" : "Design and development",
+      "lastUpdated" : "Today at 6:26 AM",
+      "timeSpent" : "30:30",
+      "count" : 46,
+      "progress" : "90%"
+    }
+
+  ]
+
+
+}
