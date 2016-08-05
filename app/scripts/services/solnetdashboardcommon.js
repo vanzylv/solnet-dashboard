@@ -35,8 +35,6 @@ angular.module('solnetDashboardApp')
         series : mockData.dailyProgress.monthTimeSeries
       };
 
-      console.log(root.dailyProgress)
-
       /*Conversations*/
       root.conversationChart =
       {
