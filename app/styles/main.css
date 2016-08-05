@@ -27,6 +27,13 @@ header .row i {
   margin-left: -20px;
   margin-top: 3px;
 }
+.project-list-padding-top {
+  padding-top: 10px;
+}
+[uib-typeahead-popup].dropdown-menu {
+  width: 300px;
+  font-size: 18px;
+}
 .common-margin-top {
   margin-top: 40px;
 }
@@ -39,11 +46,30 @@ header .row i {
   color: #000;
   padding: 0.2em 0;
 }
+.last-updated-text {
+  padding-right: 50px;
+  border-right: 1px solid;
+}
 .common-margin-bottom {
   margin-bottom: 5px;
 }
+.subheading {
+  font-size: 10px;
+}
+.client-billing-overdue {
+  padding: 15px!important;
+}
 .panel-margin-top {
+  margin-top: 10px !important;
+}
+.panel-margin-bottom {
   margin-bottom: 10px !important;
+}
+.client-name-text {
+  margin-left: 20px;
+}
+.billing-border-right {
+  border-right: 1px solid;
 }
 hr {
   display: block;

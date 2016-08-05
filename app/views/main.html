@@ -1,7 +1,6 @@
 <div ng-controller="MainCtrl" class="container-fluid display-table">
   <div class="row display-table-row">
 
-
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 gutter">
         <div class="common-padding-top"><strong>Hi {{dashboard.portfolioManager}}.</strong></div>
@@ -16,18 +15,16 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 gutter">
         <div class="panel panel-default">
-          <div class="panel-heading panel-heading-override" >
+          <div class="panel-heading panel-heading-override">
             <div><strong>Wavy Lines</strong></div>
             <div>Working hours</div>
 
           </div>
           <div class="panel-body">
-
             <canvas height="100" class="chart chart-line" chart-data="dashboard.workingHoursData"
                     chart-dataset-override="dashboard.datasetOverride" chart-labels="dashboard.labelsWorkingHours"
                     chart-series="dashboard.seriesWorkingHours">
             </canvas>
-
           </div>
         </div>
       </div>
@@ -43,7 +40,6 @@
       </div>
     </div>
 
-
     <div class="row">
       <div class="col-md-4 col-sm-4 col-xs-4 gutter">
         <div class="panel panel-default ">
@@ -56,14 +52,15 @@
                     <div>
                       <strong ng-bind="dashboard.workingHoursBreakdownChart.totalHoursBreakdown"></strong>
                     </div>
-                    <div>
+                    <div class="subheading">
                       <smaller>Working Hours</smaller>
                     </div>
                   </div>
+
                   <div class="col-md-8">
                     <canvas class="chart chart-line"
                             chart-data="dashboard.workingHoursBreakdownChart.workingHoursDataBreakdown"
-                            chart-options="dashboard.workingHoursBreakdownChart.optionsWorkingHoursBreakdown"
+                            chart-options="optionsWorkingHoursBreakdown"
                             chart-labels="dashboard.workingHoursBreakdownChart.labelsWorkingHoursBreakdown">
                     </canvas>
                   </div>
@@ -76,13 +73,13 @@
                     <div class="common-margin-top">
                       <strong ng-bind="dashboard.conversationChart.totalConversations"></strong>
                     </div>
-                    <div>
+                    <div class="subheading">
                       <smaller>Conversations</smaller>
                     </div>
                   </div>
                   <div class="col-md-8">
                     <canvas class="chart chart-line" chart-data="dashboard.conversationChart.conversationsData"
-                            chart-options="dashboard.optionsConversationsBreakdown"
+                            chart-options="optionsWorkingHoursBreakdown"
                             chart-dataset-override="[{lineTension: 0},{showTooltips:false}]"
                             chart-labels="dashboard.conversationChart.labelsConversations">
                     </canvas>
@@ -97,13 +94,13 @@
                     <div>
                       <strong ng-bind="dashboard.people.totalPeople"></strong>
                     </div>
-                    <div>
+                    <div class="subheading">
                       <smaller>People</smaller>
                     </div>
                   </div>
 
                   <div class="col-md-8">
-                    <div  class="pull-left account-circle-padding" ng-repeat="person in dashboard.people.persons">
+                    <div class="pull-left account-circle-padding" ng-repeat="person in dashboard.people.persons">
                       <i class="material-icons ">account_circle</i>
                     </div>
                   </div>
@@ -114,17 +111,19 @@
         </div>
       </div>
 
-
       <div class="col-md-8 col-sm-8 col-xs-8 gutter">
         <div class="panel panel-default">
           <div class="panel-heading panel-heading-override">
             <div><strong>Daily Progress</strong></div>
-            <div>Working hours</div>
+            <div class="subheading">Working hours</div>
           </div>
+
+          {{datasetOverride}}
+
           <div class="panel-body">
-            <canvas class="chart chart-line" chart-data="dashboard.workingHoursData"
-                    chart-options="{lineTension:0,tension:0}" chart-labels="dashboard.labelsWorkingHours"
-                    chart-series="dashboard.seriesWorkingHours">
+            <canvas class="chart chart-line" chart-data="dashboard.dailyProgress.data"
+                    chart-options="dailyProgressChartOptions" chart-labels="dashboard.dailyProgress.series"
+                    chart-dataset-override="datasetOverride" chart-series="dashboard.dailyProgress.series">
             </canvas>
           </div>
         </div>
@@ -145,36 +144,27 @@
 
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 gutter">
-
       <div ng-repeat="project in dashboard.projects">
-
-
-        <div  class="common-margin-bottom panel panel-default">
+        <div class="common-margin-bottom panel panel-default">
           <div class="panel-body">
             <div class="row">
 
-
               <div class="col-xs-3 pull-left">
                 <strong>
-
                   <div ng-bind="project.title"></div>
                 </strong>
                 <div ng-bind="project.descriptionType">
                 </div>
-
               </div>
 
-              <div class="col-xs-3">
-                <div style="padding-right:50px;border-right:1px solid" ng-bind="'Last updated ' + project.lastUpdated"
-                     class="pull-right">
+              <div class="col-xs-3 project-list-padding-top">
+                <div class="pull-right last-updated-text" ng-bind="'Last updated ' + project.lastUpdated">
                 </div>
               </div>
 
               <div class="col-xs-2 gutter">
-
                 <div class="row">
-                  <div class="col-xs-6 gutter">
-
+                  <div class="col-xs-6 gutter project-list-padding-top">
                     <div class="row">
                       <div class="col-xs-6 gutter">
                         <i class="material-icons">alarm</i>
@@ -187,21 +177,19 @@
                   </div>
                   <div class="col-xs-6 gutter">
                     <div class="row">
-                      <div class="col-xs-6 gutter">
+                      <div class="col-xs-6 gutter project-list-padding-top">
                         <i class="material-icons">note</i>
                       </div>
-                      <div class="col-xs-6 gutter">
+                      <div class="col-xs-6 gutter project-list-padding-top">
                         <div class="time-spent-text pull-left" ng-bind="project.count">
                         </div>
                       </div>
                     </div>
-
-
                   </div>
                 </div>
               </div>
-              <div class="col-xs-4 gutter">
-                <div style="margin-top:10px" class="progress">
+              <div class="col-xs-4 gutter project-list-padding-top">
+                <div class="panel-margin-top progress">
                   <div class="progress-bar progress-bar-info" ng-style="{'width': project.progress}"></div>
                 </div>
               </div>
@@ -209,14 +197,12 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 gutter">
-      <div class="common-padding-top" ><strong>Crunch some more Numbers</strong></div>
+      <div class="common-padding-top"><strong>Crunch some more Numbers</strong></div>
       <div class="no-padding-bottom">
         <small>See how your projects are progressing via the new statistics engine.</small>
       </div>
@@ -224,19 +210,16 @@
     </div>
   </div>
 
-
   <div class="row">
     <div class="col-md-4 col-sm-4 col-xs-4 gutter">
       <div class="common-margin-bottom panel panel-default">
 
-
         <div class="panel-heading panel-heading-override">
           <div><strong>Client Hours</strong></div>
-          <div>Working hours {{dashboard.clientBilling.workingHours}}</div>
+          <div class="subheading">Working hours {{dashboard.clientBilling.workingHours}}</div>
 
         </div>
         <div class="panel-body">
-
           <div class="common-padding-bottom">
             <canvas id="doughnut" class="chart chart-doughnut"
                     chart-data="dashboard.clientBilling.data" chart-labels="[]">
@@ -246,9 +229,8 @@
           <div class="row text-center">
             <div ng-repeat="client in dashboard.clientBilling.clients">
               <div class="col-xs-8 gutter">
-                <div style="margin-left: 20px" class="pull-left">{{client[0]}}</div>
+                <div class="client-name-text pull-left">{{client[0]}}</div>
               </div>
-
               <div class="col-xs-4 gutter">
                 <div><strong>{{client[1]}}</strong></div>
               </div>
@@ -273,13 +255,10 @@
               {{dashboard.clientBilling.clientManager.location}}
             </div>
           </div>
-
           <hr/>
 
           <div class="row">
-
-
-            <div style="border-right:1px solid" class="col-md-6 col-sm-6 col-xs-6 gutter">
+            <div class="billing-border-right col-xs-6 gutter">
               <div>Working hours</div>
               <div>
                 <strong>{{dashboard.clientBilling.clientManager.workHours}}</strong>
@@ -291,12 +270,10 @@
                 <strong>{{dashboard.clientBilling.clientManager.amountTotal}}</strong>
               </div>
             </div>
-
-
           </div>
           <hr/>
-          <div class="row" style="padding-bottom: 10px">
-            <div style="border-right:1px solid" class="col-md-6 col-sm-6 col-xs-6 gutter">
+          <div class="row">
+            <div class="billing-border-right col-md-6 col-sm-6 col-xs-6 gutter">
               <div>Overdue</div>
               <div>
                 <strong>{{dashboard.clientBilling.clientManager.overdue}}</strong>
@@ -314,37 +291,28 @@
       <div class="common-margin-bottom panel panel-default">
         <div class="panel-body">
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 gutter">
+            <div class="col-xs-12 gutter">
               <div class="panel-heading panel-heading-override">
                 <div><strong>Total Overdue</strong></div>
-                <div style="font-size: 10px">
+                <div class="subheading">
                   Dollars all round
                 </div>
-
-                <div style="padding: 15px;" class="h1 text-center">
+                <div class="h1 client-billing-overdue text-center">
                   {{dashboard.clientBilling.clientManager.overdue}}
                 </div>
               </div>
-
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 gutter">
               <canvas class="chart chart-line" chart-data="dashboard.workingHoursData"
-                      chart-options="{lineTension:0,tension:0}" chart-labels="dashboard.labelsWorkingHours"
+                      chart-options="dailyProgressChartOptions" chart-labels="dashboard.labelsWorkingHours"
                       chart-series="dashboard.seriesWorkingHours">
               </canvas>
             </div>
           </div>
-
-
-
         </div>
-
-
       </div>
-
-
     </div>
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 gutter">
@@ -352,8 +320,6 @@
       </div>
     </div>
   </div>
-
-
 </div>
 
 

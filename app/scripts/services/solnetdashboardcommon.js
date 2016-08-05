@@ -30,6 +30,13 @@ angular.module('solnetDashboardApp')
         totalHoursBreakdown: mockData.workingHoursDataBreakdown.totalHours
       };
 
+      root.dailyProgress = {
+        data : mockData.dailyProgress.data,
+        series : mockData.dailyProgress.monthTimeSeries
+      };
+
+      console.log(root.dailyProgress)
+
       /*Conversations*/
       root.conversationChart =
       {

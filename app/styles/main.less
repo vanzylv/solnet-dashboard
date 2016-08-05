@@ -11,17 +11,16 @@ header {
     i {
       margin-top: @common-margin;
     }
-
   }
 }
 
 .panel-heading-override {
   display: block;
-  background-color:@common-white!important;
+  background-color: @common-white !important;
 }
 
 .no-padding-bottom {
-  padding-bottom : @no-padding-bottom;
+  padding-bottom: @no-padding-bottom;
 }
 
 .common-margin {
@@ -32,21 +31,30 @@ header {
   padding-top: @common-padding-top;
 }
 
-.common-padding-bottom{
+.common-padding-bottom {
   padding-bottom: @common-padding-top;
 }
 
-.time-spent-text{
-  margin-left:-20px;margin-top:3px
+.time-spent-text {
+  margin-left: -20px;
+  margin-top: 3px
 }
 
+.project-list-padding-top {
+  padding-top : @project-list-padding;
+}
+
+[uib-typeahead-popup].dropdown-menu {
+  width: 300px;
+  font-size: 18px;
+}
 
 .common-margin-top {
-  margin-top : @common-margin-top;
+  margin-top: @common-margin-top;
 }
 
-.account-circle-padding{
-  padding:@account-padding;
+.account-circle-padding {
+  padding: @account-padding;
 }
 
 .browsehappy {
@@ -56,14 +64,37 @@ header {
   padding: 0.2em 0;
 }
 
-.common-margin-bottom{
-
-  margin-bottom: @common-margin-bottom;
-
+.last-updated-text {
+  padding-right: 50px;
+  border-right: 1px solid;
 }
 
-.panel-margin-top{
-  margin-bottom: @panel-margin-top!important;
+.common-margin-bottom {
+  margin-bottom: @common-margin-bottom;
+}
+
+.subheading{
+  font-size: 10px;
+}
+
+.client-billing-overdue{
+  padding: 15px!important;
+}
+
+.panel-margin-top {
+  margin-top: @panel-margin-top !important;
+}
+
+.panel-margin-bottom {
+  margin-bottom: @panel-margin-top !important;
+}
+
+.client-name-text{
+  margin-left: 20px;
+}
+
+.billing-border-right{
+  border-right:1px solid;
 }
 
 hr {
@@ -115,8 +146,6 @@ li, ul {
   float: none;
   height: 100%;
 }
-
-
 
 .v-align {
   vertical-align: @v-align;

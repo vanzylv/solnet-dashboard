@@ -52,6 +52,21 @@
     ]
   },
 
+  "dailyProgress" : {
+    "monthTimeSeries":
+      [
+        "08:00",
+        "09:00",
+        "10:00",
+        "11:00",
+        "12:00"
+      ],
+    "data":[
+      [2,5,7,2,4],
+      [3,6,2,8,1]
+    ]
+  },
+
   "workingHoursDataBreakdown" : {
     "totalHours" : 96,
     "hours" : [
